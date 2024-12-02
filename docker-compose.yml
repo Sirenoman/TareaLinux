@@ -14,20 +14,20 @@ services:
     environment:
       - ./backend/.env
 
-  frontend:
-    container_name: frontend-container
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "3000:80"
-    networks:
-      - presentacion-network
-    volumes:
+#  frontend:
+#    container_name: frontend-container
+#    build:
+#      context: ./frontend
+#      dockerfile: Dockerfile
+#    ports:
+#      - "3000:80"
+#    networks:
+#      - presentacion-network
+#    volumes:
       #- ./frontend:/app
-      - ./build:/usr/share/nginx/html
-    depends_on:
-      - backend
+#      - ./build:/usr/share/nginx/html
+#    depends_on:
+#      - backend
 
 networks:
   presentacion-network:
