@@ -10,7 +10,8 @@ services:
     networks:
       - presentacion-network
     volumes:
-      - ./backend:/app
+      - .:/app
+      - /app/node_modules
     environment:
       - ./backend/.env
 
