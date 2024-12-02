@@ -45,7 +45,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.PRIVATE_KEY }}
-      # Apartado de levantamiento de proyecto
+      
       - name: Deploy on Azure VM
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.IP }} << 'EOF'
