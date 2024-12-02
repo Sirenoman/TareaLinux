@@ -28,7 +28,7 @@ describe('Pruebas de API', () => {
     const res = await request(app).get('/api/presentaciones');
     expect(res.statusCode).toBe(200);
   });
-
+ // VALIDANDO INGRESO CON LOS SIGUIENTES DATOS
   it('Debe permitir la creación de una nueva presentación', async () => {
     const nuevaPresentacion = {
         NUMERO_PRESENTACION : '20231220876',
