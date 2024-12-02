@@ -15,20 +15,20 @@ services:
     environment:
       - MONGO_URI=mongodb+srv://dbadmin:Jo12345678@presentaciondb.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
 
-#  frontend:
-#    container_name: frontend-container
-#    build:
-#      context: ./frontend
-#      dockerfile: Dockerfile
-#    ports:
-#      - "3000:80"
-#    networks:
-#      - presentacion-network
+  frontend:
+    container_name: frontend-container
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - presentacion-network
 #    volumes:
       #- ./frontend:/app
 #      - ./build:/usr/share/nginx/html
-#    depends_on:
-#      - backend
+    depends_on:
+      - backend
 
 networks:
   presentacion-network:
