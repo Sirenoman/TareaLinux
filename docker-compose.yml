@@ -20,12 +20,12 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3000:80"
     networks:
       - presentacion-network
     volumes:
-      - ./frontend:/app
-      #- ./build:/usr/share/nginx/html
+      #- ./frontend:/app
+      - ./build:/usr/share/nginx/html
     depends_on:
       - backend
 

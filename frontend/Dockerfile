@@ -15,22 +15,22 @@ COPY . .
  RUN npm run build
 
 # Etapa 2: Servir la aplicación
-# FROM nginx:alpine
+FROM nginx:alpine
 
 # Servimos la aplicación estática con un servidor simple
-RUN npm install -g serve
+#RUN npm install -g serve
 
 # Copia los archivos generados en el build de React
-# COPY . /usr/share/nginx/html
+COPY . /usr/share/nginx/html
 
 # Expone el puerto 80
-#EXPOSE 80
+EXPOSE 80
  
 # Inicia el servidor
-# CMD ["nginx", "-g", "daemon off;"]
+ CMD ["nginx", "-g", "daemon off;"]
 
 # Exponemos el puerto 3000
-EXPOSE 3000
+#EXPOSE 3000
 
 # Comando para ejecutar el servidor
-CMD ["serve", "-s", "build", "--single"]
+#CMD ["serve", "-s", "build", "--single"]
