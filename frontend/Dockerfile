@@ -28,3 +28,9 @@ EXPOSE 80
  
 # Inicia el servidor
  CMD ["nginx", "-g", "daemon off;"]
+
+ # Exponemos el puerto 3000
+#EXPOSE 3000
+
+# Comando para ejecutar el servidor
+#CMD ["serve", "-s", "build", "--single"]
