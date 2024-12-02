@@ -1,0 +1,35 @@
+version: '4'
+
+services:
+  backend:
+    container_name: backend-container
+    build:
+      context: ./backend
+      dockerfile: Dockerfile # Asegúrate de que el nombre del archivo sea correcto
+    ports:
+      - "5000:5000"
+    networks:
+      - presentacion-network
+    volumes:
+      - ./backend:/app
+    environment:
+      - ./backend/.env
+
+  frontend:
+    container_name: frontend-container
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - presentacion-network
+    volumes:
+      - ./frontend:/app
+      #- ./build:/usr/share/nginx/html
+    depends_on:
+      - backend
+
+networks:
+  presentacion-network:
+    driver: bridge
